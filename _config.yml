@@ -1,1 +1,7 @@
+title: Charly25-SDR
+description: >
+  SDR-Projekt Charly25 // C25 SDR project
+url: 'https://charly25-sdr.github.io/'
+
+markdown: kramdown
 theme: jekyll-theme-dinky
