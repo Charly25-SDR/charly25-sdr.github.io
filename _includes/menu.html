@@ -1,0 +1,21 @@
+{% for subpage in include.subpages %}
+{% assign full_path = include.path | append: "/" | append: subpage.url %}
+{% assign current_page = page.url | remove: ".html" | %}
+{% if full_path == current_page %}
+  {% assign is_current = true %}
+{% else %}
+  {% assign is_current = false %}
+{% endif %}
+<div class="menu-item {% if is_current %} current-menu-item {% endif %}">
+    {% unless is_current or subpage.children %}
+      <a href={{ full_path }}>{{ subpage.name }}</a>
+    {% else %}
+      {{ subpage.name }}
+    {% endunless %}
+    {% if subpage.children %}
+      {% include menu.html path=full_path subpages=subpage.children %}
+    {% endif %}
+  </div>
+{% endfor %}
+
+{% comment %} vim: set expandtab tabstop=2 shiftwidth=2 : {% endcomment %}

@@ -1,0 +1,55 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+@media screen and (min-width: 960px) {
+	header {
+		position: initial;
+	}
+}
+
+.menu-item {
+	border-left: thin solid red;
+	padding-left: 0.5em;
+	margin: 0.5em;
+}
+
+.menu-item>a, .current-menu-item {
+	font-weight: bold;
+}
+
+.current-menu-item {
+	border-left: medium solid red;
+}
+
+.current-menu-item-text {
+	font-variant: small-caps;
+}
+
+#toggle-menu, label[for=toggle-menu] {
+	display: none;
+}
+
+@media print, screen and (max-width: 960px) {
+	#toggle-menu {
+		display: initial;
+		position: absolute;
+		clip: rect(0,0,0,0);
+	}
+
+	label[for=toggle-menu] {
+		display: initial;
+		font-size: large;
+		font-variant: small-caps;
+		font-weight: bold;
+	}
+
+	.menu-wrapper {
+		display: none;
+	}
+
+	#toggle-menu:checked ~ .menu-wrapper {
+		display: initial;
+	}
+}

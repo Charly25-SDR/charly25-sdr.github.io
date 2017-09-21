@@ -1,0 +1,34 @@
+- name: Home
+  url:
+- name: Talks & Videos
+  url: videos
+  children:
+      - name: SDR Academy 2017
+        url: sdra-2017
+- name: Hardware
+  url: hardware
+  children:
+      - name: Trx Low-Cost
+        url: trx-lc
+      - name: Trx Allband 10W
+        url: trx-ab-10w
+      - name: Trx Allband 20W
+        url: trx-ab-20w
+      - name: Rx Filters
+        url: rx-filters
+- name: Software
+  url: software
+  children:
+      - name: PowerSDR
+        url: powersdr
+      - name: pihpsdr
+        url: pihpsdr
+      - name: Arduino
+        url: arduino
+- name: Full Transceivers
+  url: full-transceivers
+  children:
+      - name: DL1FY Windows-Based
+        url: dl1fy
+      - name: Linux-Based
+        url: raspi
