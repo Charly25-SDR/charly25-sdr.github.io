@@ -53,3 +53,20 @@
 		display: initial;
 	}
 }
+
+// Responsive video, taken from http://www.holgerkoenemann.de/ein-vimeo-oder-youtube-video-responsive-einbinden/
+.video-wrapper-16-9 {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 0px;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-wrapper-16-9 iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
