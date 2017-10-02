@@ -27,6 +27,10 @@
 	font-variant: small-caps;
 }
 
+p img {
+	max-width: 100%;
+}
+
 #toggle-menu, label[for=toggle-menu] {
 	display: none;
 }
