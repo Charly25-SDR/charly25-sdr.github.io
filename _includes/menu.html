@@ -1,14 +1,21 @@
 {% for subpage in include.subpages %}
+
+{% assign subpage_url_array = subpage.url | split: "/" %}
 {% assign full_path = include.path | append: "/" | append: subpage.url %}
-{% assign current_page = page.url | remove: ".html" | %}
-{% if full_path == current_page %}
+
+{% comment %} split + join to remove trailing / {% endcomment %}
+{% assign current_page = page.url | remove: ".html" | split: "/" | join: "/" %}
+
+{% comment %} root requires special case handling {% endcomment %}
+{% if full_path == current_page or (current_page == "" and full_path == "/") %}
   {% assign is_current = true %}
 {% else %}
   {% assign is_current = false %}
 {% endif %}
+
 <div class="menu-item {% if is_current %} current-menu-item {% endif %}">
-    {% unless is_current or subpage.children %}
-      <a href={{ full_path }}>{{ subpage.name }}</a>
+    {% unless is_current or subpage.nolink %}
+      <a href="{{ full_path }}">{{ subpage.name }}</a>
     {% else %}
       {{ subpage.name }}
     {% endunless %}
