@@ -19,9 +19,9 @@
         <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
         <input type="checkbox" id="toggle-menu" />
         <label for="toggle-menu">Show Menu</label>
-        <div class="menu-wrapper">
+        <nav class="menu-wrapper">
           {% include menu.html path="" subpages=site.data.menu %}
-        </div>
+        </nav>
       </header>
 
       <section>
