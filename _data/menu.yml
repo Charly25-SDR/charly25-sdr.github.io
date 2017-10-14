@@ -8,7 +8,6 @@
         url: sdra-2017
 - name: Hardware
   url: hardware
-  nolink: true
   children:
       - name: Trx Low-Cost
         url: trx-lc

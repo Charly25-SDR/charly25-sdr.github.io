@@ -37,6 +37,10 @@ p img {
 	max-width: 100%;
 }
 
+section ul > li > ul {
+	margin: 0;
+}
+
 #toggle-menu, label[for=toggle-menu] {
 	display: none;
 }
