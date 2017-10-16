@@ -2,4 +2,6 @@
 title: DL1FY Windows-Based SDR
 ---
 
-Full transceiver based on a Mini-PC running Windows 10
+# {{page.title}}
+
+{% include responsive-iframe.html ratio="4:3" src="/assets/js/ViewerJS/#../../download/dl1fy-trx-slides.pdf" %}
