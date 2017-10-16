@@ -1,0 +1,10 @@
+{% assign ratios = include.ratio | default: "1:1" | split: ":" %}
+{% assign ratio_width = ratios | first | times: 1.0 %}
+{% assign ratio_height = ratios | last | times: 1.0 %}
+{% assign ratio_percent = ratio_height | divided_by: ratio_width | times: 100 %}
+
+<p style="padding-bottom:{{ ratio_percent }}%" class="responsive-iframe-wrapper">
+  <iframe src="{{ include.src }}" frameborder="0" {% unless nofullscreen %} allowfullscreen {% endunless %}>
+    <a href="{{ include.src }}">{{ include.src }}</a>
+  </iframe>
+</p>
