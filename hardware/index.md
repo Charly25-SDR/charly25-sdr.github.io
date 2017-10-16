@@ -47,3 +47,11 @@ It had its drawbacks of course (high impedance input for example) but meanwhile 
 So we skipped our idea of building our own SDR TRX board and continued with Red Pitaya as our main core SDR (the idea of using IQ chips is not completely dead as we still dream about building a fully portable, handheld TRX. This might bring us back to the small QFN chips from Analog and LT one day… power consumption is one of the drawbacks of the RP concept….).  
 
 One of the question to be clarified was the controllability of the HW that we would build. Some people using RP have followed the Hermes path and tried to simulate the Hermes functionality, including the usage of I/O Pins on the Red Pitaya under control of the Hermes SW.
+
+We looked at this approach and also it was an easy path forward, it did not give us the flexibility we would like to see in our future designs.
+
+In addition, we always thought that the HW to be build would have to be useful in a traditional way as well using a microprocessor control and any HF processing unit connected to it.
+
+We did not want to lock ourselves into direct sampling SDR as the only option.
+
+This is the reason why we decided to control all of our HW using I2C.
