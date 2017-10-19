@@ -1,34 +1,34 @@
-{% for subpage in include.subpages %}
+{%- for subpage in include.subpages -%}
 
-{% assign subpage_url_array = subpage.url | split: "/" %}
-{% assign full_path = include.path | append: "/" | append: subpage.url %}
+{%- assign subpage_url_array = subpage.url | split: "/" -%}
+{%- assign full_path = include.path | append: "/" | append: subpage.url -%}
 
-{% comment %} split + join to remove trailing / {% endcomment %}
-{% assign current_page = page.url | remove: ".html" | split: "/" | join: "/" %}
+{%- comment -%} split + join to remove trailing / {%- endcomment -%}
+{%- assign current_page = page.url | remove: ".html" | split: "/" | join: "/" -%}
 
-{% if page.menu_parent %}
-  {% assign last_length = current_page | split: "/" | last | size %}
-  {% assign parent_length = current_page | size | minus: last_length | minus: 1 %}
-  {% assign current_page = current_page | truncate: parent_length, "" %}
-{% endif %}
+{%- if page.menu_parent -%}
+  {%- assign last_length = current_page | split: "/" | last | size -%}
+  {%- assign parent_length = current_page | size | minus: last_length | minus: 1 -%}
+  {%- assign current_page = current_page | truncate: parent_length, "" -%}
+{%- endif -%}
 
-{% comment %} root requires special case handling {% endcomment %}
-{% if full_path == current_page or (current_page == "" and full_path == "/") %}
-  {% assign is_current = true %}
-{% else %}
-  {% assign is_current = false %}
-{% endif %}
+{%- comment -%} root requires special case handling {%- endcomment -%}
+{%- if full_path == current_page or (current_page == "" and full_path == "/") -%}
+  {%- assign is_current = true -%}
+{%- else -%}
+  {%- assign is_current = false -%}
+{%- endif -%}
 
-<div class="menu-item {% if is_current %} current-menu-item {% endif %}">
-  {% unless is_current or subpage.nolink %}
+<div class="menu-item {%- if is_current %} current-menu-item {%- endif -%}">
+  {%- unless is_current or subpage.nolink -%}
     <a href="{{ full_path }}">{{ subpage.name }}</a>
-  {% else %}
-    {{ subpage.name }}
-  {% endunless %}
-  {% if subpage.children %}
-    {% include menu.html path=full_path subpages=subpage.children %}
-  {% endif %}
+  {%- else -%}
+    {{- subpage.name -}}
+  {%- endunless -%}
+  {%- if subpage.children -%}
+    {%- include menu.html path=full_path subpages=subpage.children -%}
+  {%- endif -%}
 </div>
-{% endfor %}
+{%- endfor -%}
 
-{% comment %} vim: set expandtab tabstop=2 shiftwidth=2 : {% endcomment %}
+{%- comment -%} vim: set expandtab tabstop=2 shiftwidth=2 : {%- endcomment -%}
