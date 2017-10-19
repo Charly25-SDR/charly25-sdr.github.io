@@ -45,32 +45,33 @@ menu_parent: true
 </form>
 
 <script>
-function recalculateFilter() {
-    let input = function(name) {
+{
+const recalculateFilter = function() {
+    const input = function(name) {
         return document.getElementById("input-" + name).value;
     };
-    let XL = input("XL");
-    let Qu = input("Qu");
-    let f = input("f");
-    let BW = input("BW");
-    let Z = input("Z");;
-    let AL = input("AL");
-    let q = 0.7654;
-    let k12 = 0.8409;
-    let k23  = 0.5412;
-    let L = XL / (2 * Math.PI * f);
-    let omega = 2 * Math.PI * f * 1e6;
-    let C0 = 1e18 / (omega * omega * L);
-    let QE = q * f * Qu / (BW * Qu - q * f);
-    let Rp = omega * L * QE / 1e6;
-    let C12 = C0 * k12 * BW / f;
-    let C23 = C0 * k23 * BW / f;
-    let C1 = C0 - C12;
-    let C2 = C0 - C12 - C23;
-    let turnsL = Math.sqrt((L / 1e6) / (AL / 1e9));
-    let turnsLk = turnsL / Math.sqrt(Rp /  Z);
-    let outputFormat = new Intl.NumberFormat("en-GB", { maximumSignificantDigits: 5 });
-    let output = function(name, value) {
+    const XL = input("XL");
+    const Qu = input("Qu");
+    const f = input("f");
+    const BW = input("BW");
+    const Z = input("Z");;
+    const AL = input("AL");
+    const q = 0.7654;
+    const k12 = 0.8409;
+    const k23  = 0.5412;
+    const L = XL / (2 * Math.PI * f);
+    const omega = 2 * Math.PI * f * 1e6;
+    const C0 = 1e18 / (omega * omega * L);
+    const QE = q * f * Qu / (BW * Qu - q * f);
+    const Rp = omega * L * QE / 1e6;
+    const C12 = C0 * k12 * BW / f;
+    const C23 = C0 * k23 * BW / f;
+    const C1 = C0 - C12;
+    const C2 = C0 - C12 - C23;
+    const turnsL = Math.sqrt((L / 1e6) / (AL / 1e9));
+    const turnsLk = turnsL / Math.sqrt(Rp /  Z);
+    const outputFormat = new Intl.NumberFormat("en-GB", { maximumSignificantDigits: 5 });
+    const output = function(name, value) {
         document.getElementById("output-" + name).value = outputFormat.format(value);
     };
     output("L", L);
@@ -88,6 +89,7 @@ document.querySelectorAll("#input-fields input").forEach(function(el) {
     el.addEventListener("change", function(_) { recalculateFilter(); });
 });
 recalculateFilter();
+}
 </script>
 
 ## Toroid core  data
