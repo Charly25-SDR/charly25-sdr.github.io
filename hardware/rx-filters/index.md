@@ -12,7 +12,7 @@ It is not clear currently if/when a commercial version will be available. The pr
 
 For those of you who want to build one yourself, enclosed please find the standard schematics.
 
-I have also created an Excel sheet to calculate them; this spreadsheet is available [here](/assets/download/filter-calculator.xls) The ones I tested and downloaded from the internet were faulty and I wasted long weeks of prototype building to find out. You can either do a Chebyshev or a Butterworth Design using the Spreadsheet.
+I have also created an Excel sheet to calculate them; this spreadsheet is available [here](/assets/download/filter-calculator.xls). A web-based version is also available [here](calculator). The ones I tested and downloaded from the internet were faulty and I wasted long weeks of prototype building to find out. You can either do a Chebyshev or a Butterworth Design using the Spreadsheet.
 
 [![Butterworth Filter Example](/assets/img/hardware/rx-butterworth-filter-example.png)](/assets/img/hardware/rx-butterworth-filter-example.png)
 

@@ -4,6 +4,9 @@
 
 ## Latest Changes
 
+2017-10-19
+: Added web-based calculator for Rx filters
+
 2017-10-16
 : Added HamRadio presentation slides
 : Added slides for DL1FY self-contained transceiver

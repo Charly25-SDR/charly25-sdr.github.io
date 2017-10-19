@@ -41,6 +41,12 @@ section ul > li > ul {
 	margin: 0;
 }
 
+// Taken from W3Schools; since Dinky breaks subscript ...
+sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+
 #toggle-menu, label[for=toggle-menu] {
 	display: none;
 }
