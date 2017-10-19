@@ -6,6 +6,7 @@
 
 2017-10-19
 : Added web-based calculator for Rx filters
+: Added short entry for QUISK
 
 2017-10-16
 : Added HamRadio presentation slides

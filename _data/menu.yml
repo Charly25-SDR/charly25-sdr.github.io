@@ -25,6 +25,8 @@
         url: powersdr
       - name: pihpsdr
         url: pihpsdr
+      - name: QUISK
+        url: quisk
       - name: Arduino
         url: arduino
 - name: Full Transceivers
