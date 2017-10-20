@@ -44,6 +44,8 @@ menu_parent: true
 </formset>
 </form>
 
+![Bandpass Filter Schematic](/assets/img/hardware/rx-filters/calculator-schematic.png)
+
 <script>
 {
 const recalculateFilter = function() {
