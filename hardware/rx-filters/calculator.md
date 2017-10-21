@@ -6,8 +6,8 @@ menu_parent: true
 # [\<<](.) {{page.title}}
 
 <form action="#">
-<h2>Input values</h2>
-<formset id="input-fields">
+<fieldset id="input-fields">
+    <legend><h2>Input values</h2></legend>
     <label>(Ideal X<sub>L</sub> range to be 50-150 &Omega;)<input type="number" id="input-XL" value="108" step="any" />&Omega;</label>
     <br/>
     <label>Assume unloaded Q, Q<sub>u</sub><input type="number" id="input-Qu" value="200" step="any" /></label>
@@ -19,29 +19,29 @@ menu_parent: true
     <label for="input-Z">Z<sub>in</sub>/Z<sub>out</sub> <input type="number" id="input-Z" value="50" step="any" />&Omega;</label>
     <br/>
     <label for="input-AL">Core A<sub>L</sub> <input type="number" id="input-AL" value="4" step="any"/></label>
-</formset>
-<h2>Output values</h2>
-<formset>
-    <label>L<sub>1</sub> to L<sub>4</sub><input step="any" id="output-L" readonly="true" />&mu;H</label>
+</fieldset>
+<fieldset>
+    <legend><h2>Output values</h2></legend>
+    <label>L<sub>1</sub> to L<sub>4</sub><input type="number" step="any" id="output-L" readonly />&mu;H</label>
     <br/>
-    <label>C<sub>12</sub> <input step="any" id="output-C12" readonly="true" />pF</label>
+    <label>C<sub>12</sub> <input type="number" step="any" id="output-C12" readonly />pF</label>
     <br/>
-    <label>C<sub>23</sub> <input step="any" id="output-C23" readonly="true" />pF</label>
+    <label>C<sub>23</sub> <input type="number" step="any" id="output-C23" readonly />pF</label>
     <br/>
-    <label>C<sub>34</sub> <input step="any" id="output-C34" readonly="true" />pF</label>
+    <label>C<sub>34</sub> <input type="number" step="any" id="output-C34" readonly />pF</label>
     <br/>
-    <label>C<sub>1</sub> <input step="any" id="output-C1" readonly="true" />pF</label>
+    <label>C<sub>1</sub> <input type="number" step="any" id="output-C1" readonly />pF</label>
     <br/>
-    <label>C<sub>2</sub> <input step="any" id="output-C2" readonly="true" />pF</label>
+    <label>C<sub>2</sub> <input type="number" step="any" id="output-C2" readonly />pF</label>
     <br/>
-    <label>C<sub>3</sub> <input step="any" id="output-C3" readonly="true" />pF</label>
+    <label>C<sub>3</sub> <input type="number" step="any" id="output-C3" readonly />pF</label>
     <br/>
-    <label>C<sub>4</sub> <input step="any" id="output-C4" readonly="true" />pF</label>
+    <label>C<sub>4</sub> <input type="number" step="any" id="output-C4" readonly />pF</label>
     <br/>
-    <label>Turns (L<sub>1</sub> to L<sub>4</sub>) <input step="any" id="output-turnsL" readonly="true" /> turns</label>
+    <label>Turns (L<sub>1</sub> to L<sub>4</sub>) <input type="number" step="any" id="output-turnsL" readonly /> turns</label>
     <br/>
-    <label>Input/Output turns (L<sub>k</sub>) <input step="any" id="output-turnsLk" readonly="true" /> turns</label>
-</formset>
+    <label>Input/Output turns (L<sub>k</sub>) <input type="number" step="any" id="output-turnsLk" readonly /> turns</label>
+</fieldset>
 </form>
 
 ![Bandpass Filter Schematic](/assets/img/hardware/rx-filters/calculator-schematic.png)
