@@ -15,8 +15,10 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
-        <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
+        <a href="/">
+          <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
+          <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
+        </a>
         <input type="checkbox" id="toggle-menu" />
         <label for="toggle-menu">Show Menu</label>
         <nav class="menu-wrapper">
