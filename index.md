@@ -4,6 +4,9 @@
 
 ## Latest Changes
 
+2017-11-15
+: Extended Rx filter page with explanation of its benefits
+
 2017-10-19
 : Added web-based calculator for Rx filters
 : Added short entry for QUISK
