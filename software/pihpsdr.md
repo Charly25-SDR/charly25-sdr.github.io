@@ -26,3 +26,9 @@ While the interface was designed for screens with a resolution of 800×480 pixel
 * Removing `full_screen=0;`{:code-c} causes the pihpsdr to go into fullscreen mode, even for screen wider than 800 or taller than 480 pixels.
 * Removing `gtk_window_set_resizable(GTK_WINDOW(top_window), FALSE);`{:code-c} a few lines further down makes the window resizable.
 * If you end up with a bright/white font on a white background, remove the line `GUI_OPTIONS+= -D FORCE_WHITE_MENU` in `Makefile`, run `make clean`, and compile again.
+
+## Version 1.2
+
+On 12 November 2017, Version 1.2 of pihpsdr was released, including support for PureSignal (predistortion), among other features. As the release is a pretty big commit (featuring over 6000 lines of code added!), and my released C25 modifications were slightly rushed, those will be reimplemented cleaner and on top of version 1.2 soon.
+
+However, one RedPitaya/STEMlab-related change has been made so far. By uncommenting the `STEMLAB_DISCOVERY=STEMLAB_DISCOVERY` option in `Makefile`, pihpsdr can be built with support for discovering RedPitaya/STEMlab devices. This means that figuring out its IP address and opening the web interface is no longer necessary in order to use it as an SDR with pihpsdr. This feature requires additional software, which might come standard with your Linux distribution: Avahi and cURL. To install those on Debian-based systems, you can run `sudo apt-get install avahi curl`.

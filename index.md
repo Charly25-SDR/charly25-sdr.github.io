@@ -4,6 +4,9 @@
 
 ## Latest Changes
 
+2017-11-17
+: Added note about pihpsdr 1.2 and STEMlab discovery feature
+
 2017-11-15
 : Extended Rx filter page with explanation of its benefits
 
