@@ -4,6 +4,9 @@
 
 ## Latest Changes
 
+2018-03-15
+: Added subsection about Charly 25 specific Red Pitaya software
+
 2017-11-17
 : Added note about pihpsdr 1.2 and STEMlab discovery feature
 

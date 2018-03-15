@@ -21,14 +21,16 @@
   url: software
   nolink: true
   children:
-      - name: PowerSDR
-        url: powersdr
-      - name: pihpsdr
-        url: pihpsdr
-      - name: QUISK
-        url: quisk
       - name: Arduino
         url: arduino
+      - name: pihpsdr
+        url: pihpsdr
+      - name: PowerSDR
+        url: powersdr
+      - name: QUISK
+        url: quisk
+      - name: Red Pitaya
+        url: redpitaya
 - name: Full Transceivers
   url: full-transceivers
   nolink: true
