@@ -4,7 +4,7 @@ title: Red Pitaya Software for Charly 25
 
 # Red Pitaya Software for Charly 25
 
-Here is the Red Pitaya software based on [Pavel Demin's project: SDR transceiver compatible with HPSDR](https://pavel-demin.github.io/red-pitaya-notes/sdr-transceiver-hpsdr), modified for our needs.
+Here is the Red Pitaya software based on Pavel Demin's project: [SDR transceiver compatible with HPSDR](https://pavel-demin.github.io/red-pitaya-notes/sdr-transceiver-hpsdr), modified for our needs.
 
 You can download the latest stable version from here:
 
