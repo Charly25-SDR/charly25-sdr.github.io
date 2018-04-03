@@ -6,6 +6,8 @@
   children:
       - name: SDR Academy 2017
         url: sdra-2017
+      - name: AFu-Tagung München 2018
+        url: afu-tagung-2018
 - name: Hardware
   url: hardware
   children:

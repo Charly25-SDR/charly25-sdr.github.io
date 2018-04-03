@@ -4,6 +4,9 @@
 
 ## Latest Changes
 
+2018-04-03
+: Added page about Munich Amateur Radio Conference 2018 (in German)
+
 2018-03-15
 : Added subsection about Charly 25 specific Red Pitaya software
 
