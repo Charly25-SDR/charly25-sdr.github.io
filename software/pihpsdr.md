@@ -14,9 +14,9 @@ In addition to touchscreen controls, pihpsdr also offers support for buttons and
 
 ## Charly25 adjustments
 
-As a first step to supporting all C25 features, controls for the preamp and attenuator have been added to pihpsdr. For this purpose, the controls for the 0-31dB step attenuator have been replaced with two sliders, allowing independent control of amplification and attenuation level.
+As a first step to supporting all C25 features, controls for the preamp and attenuator have been added to pihpsdr. For this purpose, the controls for the 0-31dB step attenuator have been replaced with two comboboxes, allowing independent control of amplification and attenuation level.
 
-For now, the necessary changes can be found in a seperate branch [here](https://github.com/markusgrosser/pihpsdr). Please note that the binaries in the repository have **not** been recompiled with the new features, so users will have to compile the code themselves. The required steps to do so for a Debian-based system can be found in the repository under `release/documentation/pihpsdr-build.pdf`.
+For now, the necessary changes can be found in a seperate branch [here](https://github.com/markusgrosser/pihpsdr/tree/charly25-filter-board). Please note that the binaries in the repository have **not** been recompiled with the new features, so users will have to compile the code themselves. The required steps to do so for a Debian-based system can be found in the repository under `release/documentation/pihpsdr-build.pdf`.
 
 ## Desktop usage
 
@@ -25,10 +25,8 @@ While the interface was designed for screens with a resolution of 800×480 pixel
 * Removing the `display_width=800;`{:code-c} and `display_height=480;`{:code-c} lines enables the window to take an arbitrary size.
 * Removing `full_screen=0;`{:code-c} causes the pihpsdr to go into fullscreen mode, even for screen wider than 800 or taller than 480 pixels.
 * Removing `gtk_window_set_resizable(GTK_WINDOW(top_window), FALSE);`{:code-c} a few lines further down makes the window resizable.
-* If you end up with a bright/white font on a white background, remove the line `GUI_OPTIONS+= -D FORCE_WHITE_MENU` in `Makefile`, run `make clean`, and compile again.
+* If you end up with a bright/white font on a white background, comment all out lines that force a background colour, for example by running `sed -i 's!gtk_widget_override_background_color!//gtk_widget_override_background_color!' *.c` on the command line in the pihpsdr directory.
 
-## Version 1.2
+## STEMLab discovery
 
-On 12 November 2017, Version 1.2 of pihpsdr was released, including support for PureSignal (predistortion), among other features. As the release is a pretty big commit (featuring over 6000 lines of code added!), and my released C25 modifications were slightly rushed, those will be reimplemented cleaner and on top of version 1.2 soon.
-
-However, one RedPitaya/STEMlab-related change has been made so far. By uncommenting the `STEMLAB_DISCOVERY=STEMLAB_DISCOVERY` option in `Makefile`, pihpsdr can be built with support for discovering RedPitaya/STEMlab devices. This means that figuring out its IP address and opening the web interface is no longer necessary in order to use it as an SDR with pihpsdr. This feature requires additional software, which might come standard with your Linux distribution: Avahi and cURL. To install those on Debian-based systems, you can run `sudo apt-get install avahi curl`.
+By uncommenting the `STEMLAB_DISCOVERY=STEMLAB_DISCOVERY` option in `Makefile`, pihpsdr can be built with support for discovering RedPitaya/STEMlab devices. This means that figuring out its IP address and opening the web interface is no longer necessary in order to use it as an SDR with pihpsdr. This feature requires additional software, which might come standard with your Linux distribution: Avahi and cURL. To install those on Debian-based systems, you can run `sudo apt-get install avahi curl`.

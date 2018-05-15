@@ -4,6 +4,9 @@
 
 ## Latest Changes
 
+2018-05-15
+: C25 hardware controls now available for pihpsdr 1.2
+
 2018-04-03
 : Added page about Munich Amateur Radio Conference 2018 (in German)
 
