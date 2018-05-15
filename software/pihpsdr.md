@@ -14,9 +14,7 @@ In addition to touchscreen controls, pihpsdr also offers support for buttons and
 
 ## Charly25 adjustments
 
-As a first step to supporting all C25 features, controls for the preamp and attenuator have been added to pihpsdr. For this purpose, the controls for the 0-31dB step attenuator have been replaced with two comboboxes, allowing independent control of amplification and attenuation level.
-
-For now, the necessary changes can be found in a seperate branch [here](https://github.com/markusgrosser/pihpsdr/tree/charly25-filter-board). Please note that the binaries in the repository have **not** been recompiled with the new features, so users will have to compile the code themselves. The required steps to do so for a Debian-based system can be found in the repository under `release/documentation/pihpsdr-build.pdf`.
+All C25 hardware features are now supported by pihpsdr by default—although we recommend compiling it yourself, since the binaries in the repository might not always be up to date. The required steps to do so for a Debian-based system can be found in the repository under `release/documentation/pihpsdr-build.pdf`.
 
 ## Desktop usage
 
