@@ -2,7 +2,7 @@ title: C25-SDR
 description: Charly25 SDR project
 url: 'https://charly25-sdr.github.io/'
 
-google_analytics: UA-108344925-1
+#google_analytics: UA-108344925-1
 
 markdown: kramdown
 theme: jekyll-theme-dinky
