@@ -400,7 +400,7 @@ function recalculate_schematic() {
     
     // Drawing stuff
     schematic_field.innerHTML = ''
-    for (let c of Array.concat([Cp1, Cpn], C.slice(1), Cp.slice(1))) {
+    for (let c of [Cp1, Cpn].concat(C.slice(1), Cp.slice(1))) {
         if (c < 0 || isNaN(c)) {
             calculation_error.style.display = 'block'
             return
