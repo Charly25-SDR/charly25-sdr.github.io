@@ -1,5 +1,7 @@
 - name: Home
   url:
+- name: Project Updates [DE]
+  url: project-updates
 - name: Talks & Videos
   url: videos
   nolink: true
