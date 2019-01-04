@@ -45,11 +45,11 @@ menu_parent: true
     <label>Input Impedance <input type="number" id="input-impedance" min="0" step="any" value="50"> &#x2126;</label><br>
     <label>Output Impedance <input type="number" id="output-impedance" min="0" step="any" value="50"> &#x2126;</label>
 </fieldset>
-<!--<h3>Q Factors (only for filter curve plot)</h3>
+<h3>Q Factors (only for filter curve plot)</h3>
 <fieldset id="q-factors">
     <label>Capacitors <input type="number" id="capacitor-q-factor" min="0" step="any" value="1000"></label><br>
     <label>Coils <input type="number" id="coils-q-factor" min="0" step="any" value="100"></label>
-</fieldset>-->
+</fieldset>
 </form>
 
 ## Result
@@ -60,13 +60,15 @@ menu_parent: true
 
 <svg id="schematic-output" width="100%" height="0em"></svg>
 
-<!--### Filter Curve
+### Filter Curve
+
+**SHAPE CORRECT, BUT VALUES PROBABLY OFF BY A FACTOR OF 2!**
 
 <div id="curveplot"></div>
 
 <script src="https://unpkg.com/d3@3/d3.min.js"></script>
 <script src="https://unpkg.com/function-plot@1/dist/function-plot.js"></script>
--->
+
 <script>
 (function(){
 const low_high_radio = document.getElementById('frequency-selection-low-high-radio')
@@ -97,6 +99,9 @@ const output_impedance_field = document.getElementById('output-impedance')
 
 const calculation_error = document.getElementById('calculation-error')
 const schematic_field = document.getElementById('schematic-output')
+
+const capacity_q_field = document.getElementById('capacitor-q-factor')
+const inductivity_q_field = document.getElementById('coils-q-factor')
 
 ;[low_high_radio, center_fbw_radio].forEach(function(el) {
     el.addEventListener('input', function(_) {
@@ -242,7 +247,7 @@ function recalculate_coils() {
 center_field.addEventListener('input', function(_) {
     recalculate_coils()
 })
-;[order_field, input_impedance_field, output_impedance_field].forEach(function(el) {
+;[order_field, input_impedance_field, output_impedance_field, capacity_q_field, inductivity_q_field].forEach(function(el) {
     el.addEventListener('input', function(_) {
         recalculate_schematic()
     })
@@ -311,6 +316,42 @@ function draw_vertical_capacitor(capacity, start_y) {
     return 2.5
 }
 
+// Basic complex arithmetic
+function com(re, im) {
+    return {re: re, im: im}
+}
+function cadd(x1, x2) {
+    return com(x1.re + x2.re, x1.im + x2.im)
+}
+function cneg(x) {
+    return com(-x.re, -x.im)
+}
+function csub(x1, x2) {
+    return cadd(x1, cneg(x2))
+}
+function cmul(x1, x2) {
+    return com(x1.re * x2.re - x1.im * x2.im, x1.im * x2.re + x1.re * x2.im)
+}
+function cinv(x) {
+    const denom = x.re * x.re + x.im * x.im
+    return com(x.re / denom, -x.im / denom)
+}
+function cdiv(x1, x2) {
+    return cmul(x1, cinv(x2))
+}
+function cabs(x) {
+    return Math.sqrt(x.re * x.re + x.im * x.im)
+}
+function abcdmult(x1, x2) {
+    const mam = function(y1, y2, y3, y4) {
+        return cadd(cmul(y1, y2), cmul(y3, y4))
+    }
+    return {A: mam(x1.A, x2.A, x1.B, x2.C),
+        B: mam(x1.A, x2.B, x1.B, x2.D),
+        C: mam(x1.C, x2.A, x1.D, x2.C),
+        D: mam(x1.C, x2.B, x1.D, x2.D)}
+}
+
 function recalculate_schematic() {
     const center = Number(center_field.value)
     const fbw = Number(fbw_field.value)
@@ -324,6 +365,9 @@ function recalculate_schematic() {
     const order = Number(order_field.value)
     const Z0 = Number(input_impedance_field.value)
     const Znp1 = Number(output_impedance_field.value)
+
+    const QC = Number(capacity_q_field.value)
+    const QL = Number(inductivity_q_field.value)
 
     // Chebyshev prototype LPF
     const c17_37 = 40 / Math.log(10) // roughly 17.37
@@ -428,16 +472,75 @@ function recalculate_schematic() {
     schematic_field.appendChild(make_shape('circle', {cx: '1em', cy: yem(1.25), r: '0.25em', stroke: 'black', fill: 'none'}))
     start_y += 2.25
     schematic_field.style.height = start_y + 'em'
+
+    const Zc = function(c, f) {
+        const X = 1 / (2 * Math.PI * f * c)
+        return com(X / QC, -X)
+    }
+    const Yc = function(c, f) {
+        return cinv(Zc(c, f))
+    }
+    const Yl = function(l, f) {
+        const X = 2 * Math.PI * f * l
+        return cinv(com(X / QL, X))
+    }
+    const abcdser = function(c) {
+        return function(f) {
+            return {A: com(1, 0), B: Zc(c, f), C: com(0, 0), D: com(1, 0)}
+        }
+    }
+    const abcdpi = function(c1, l, c2) {
+        return function(f) {
+            const Y1 = Yc(c1, f)
+            const Y3 = Yl(l, f)
+            const Y2 = Yc(c2, f)
+            const A = cadd(com(1, 0), cdiv(Y2, Y3))
+            const B = cinv(Y3)
+            const C = cadd(cadd(Y1, Y2), cdiv(cmul(Y1, Y2), Y3))
+            const D = cadd(com(1, 0), cdiv(Y1, Y3))
+            return {A: A, B: B, C: C, D: D}
+        }
+    }
+
+    let ABCDs = []
+    ABCDs.push(abcdser(C[1]))
+    ABCDs.push(abcdpi(Cp1, Ls, Cp[1]))
+    for (let i = 1; i <= order - 2; i++) {
+        ABCDs.push(abcdser(C[i+1]))
+        ABCDs.push(abcdpi(Cp[i], Ls, Cp[i+1]))
+    }
+    ABCDs.push(abcdser(C[order]))
+    ABCDs.push(abcdpi(Cp[order-1], Ls, Cpn))
+    ABCDs.push(abcdser(C[order+1]))
+    const ABCD = function(f) {
+        const mapped = ABCDs.map(function(abcd) { return abcd(f) })
+        return ABCDs.map(function(abcd) { return abcd(f) }).reduce(abcdmult)
+    }
+    const S21 = function(f) {
+        const v = ABCD(f)
+        return cdiv(com(2, 0), cadd(cadd(cadd(v.A, cdiv(v.B, com(Znp1, 0))), cmul(v.C, com(Z0, 0))), v.D))
+    }
+    const dB = function(x) {
+        return 10 * Math.log10(x)
+    }
+    const transfer = function(f) {
+        const a = cabs(S21(f))
+        return a * a
+    }
+    functionPlot({
+        target: '#curveplot',
+        xAxis: {
+            domain: [1, center * 3e6]
+        },
+        yAxis: {
+            domain: [-100, 0]
+        },
+        data: [{
+            graphType: 'polyline',
+            fn: function(scope) { return dB(transfer(scope.x)) }
+        }]
+    })
 }
 recalculate_schematic()
-
-// TODO
-/*functionPlot({
-    target: '#curveplot',
-    data: [{
-        graphType: 'polyline',
-        fn: scope => scope.x * scope.x
-    }]
-})*/
 })()
 </script>
