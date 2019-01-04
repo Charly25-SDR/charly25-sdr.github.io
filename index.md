@@ -4,6 +4,9 @@
 
 ## Latest Changes
 
+2019-01-04
+: Add Project Updates page (in German)
+
 2018-05-15
 : C25 hardware controls now available for pihpsdr 1.2
 
