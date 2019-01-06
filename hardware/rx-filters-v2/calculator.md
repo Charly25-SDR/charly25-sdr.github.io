@@ -62,8 +62,6 @@ menu_parent: true
 
 ### Filter Curve
 
-**SHAPE CORRECT, BUT VALUES PROBABLY OFF BY A FACTOR OF 2!**
-
 <div id="curveplot"></div>
 
 <script src="https://unpkg.com/d3@3/d3.min.js"></script>
