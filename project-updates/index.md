@@ -6,6 +6,9 @@ title: Project Updates
 
 Below is a list of project updates that we posted on the German CQ-NRW forum.
 
+2019-01-07
+: [C25 CODEC, Anschlussbelegung, Preis, Verfügbarkeit](http://forum.powersdr.de/viewtopic.php?f=76&t=393)
+
 2018-12-03
 : [Kompatibilitätstest-neuer CODEC mit Stemlab 16 (Prototyp)](http://forum.powersdr.de/viewtopic.php?f=76&t=387)
 
