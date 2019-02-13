@@ -4,6 +4,9 @@
 
 ## Latest Changes
 
+2019-02-13
+: Add link to [our shop](https://smartradioconcepts.com/)
+
 2019-01-04
 : Add Project Updates page (in German)
 
