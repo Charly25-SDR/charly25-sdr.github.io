@@ -6,6 +6,9 @@ title: Project Updates
 
 Below is a list of project updates that we posted on the German CQ-NRW forum.
 
+2019-02-06 / 2019-02-13
+: [Charly 25 Baugruppen im WEB Shop](http://forum.powersdr.de/viewtopic.php?f=76&t=398)
+
 2019-01-07
 : [C25 CODEC, Anschlussbelegung, Preis, Verfügbarkeit](http://forum.powersdr.de/viewtopic.php?f=76&t=393)
 
