@@ -1,5 +1,7 @@
 - name: Home
   url:
+- name: Shop
+  url: https://smartradioconcepts.com/
 - name: Project Updates [DE]
   url: project-updates
 - name: Talks & Videos
