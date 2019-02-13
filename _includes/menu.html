@@ -19,6 +19,12 @@
   {%- assign is_current = false -%}
 {%- endif -%}
 
+{%- comment -%} Handling external links - we effectively throw everything from
+  before into the bin {%- endcomment -%}
+{%- if subpage.url contains 'https://' -%}
+  {%- assign full_path = subpage.url -%}
+{%- endif -%}
+
 <div class="menu-item {%- if is_current %} current-menu-item {%- endif -%}">
   {%- unless is_current or subpage.nolink -%}
     <a href="{{ full_path }}">{{ subpage.name }}</a>
