@@ -8,7 +8,7 @@ Here is the PowerSDR software from the [openHPSDR project](https://github.com/TA
 
 You can download the latest stable version (setup package) from here:
 
-[PowerSDR Charly 25 Edition - latest stable version](http://downloads.redpitaya.com/hamlab/powersdr/Setup_PowerSDR_Charly_25_HAMlab_STEMlab_Edition.exe)
+[PowerSDR Charly 25 Edition - latest stable version](https://charly25-sdr.github.io/downloads/releases/Setup_PowerSDR_Charly_25_HAMlab_STEMlab_Edition.exe)
 
 If you are interested in the sourcecode you can find the current master branch here:
 
