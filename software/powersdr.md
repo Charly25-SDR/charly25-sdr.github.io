@@ -6,9 +6,11 @@ title: PowerSDR Charly 25 Edition
 
 Here is the PowerSDR software from the [openHPSDR project](https://github.com/TAPR/OpenHPSDR-PowerSDR), modified for our needs.
 
-You can download the latest stable version (setup package) from here:
+You can always find the downloads for the latest versions (setup package) here:
 
-[PowerSDR Charly 25 Edition - latest stable version](https://charly25-sdr.github.io/downloads/releases/Setup_PowerSDR_Charly_25_HAMlab_STEMlab_Edition.exe)
+[PowerSDR Charly 25 Edition - Betas and Releases](https://github.com/Charly25-SDR/binary-downloads/releases)
+
+Note that the *Source Code* downloads on this page **do not** actually contain the source code of PowerSDR.
 
 If you are interested in the sourcecode you can find the current master branch here:
 
