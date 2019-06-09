@@ -2,8 +2,6 @@
 title: Amateurfunktagung München 2018
 ---
 
-*In German, since the whole conference was in German. Sorry to our English readers.*
-
 # {{page.title}}
 
 Auf der Tagung waren wir über beide Tage mit einem Stand vertreten und stellten unsere aktuellen Entwicklungen und Fortschritte auch in einem Vortrag vor:

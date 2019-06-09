@@ -10,8 +10,12 @@
   children:
       - name: SDR Academy 2017
         url: sdra-2017
-      - name: AFu-Tagung München 2018
+      - name: AFu-Tagung München 2018 [DE]
         url: afu-tagung-2018
+      - name: Make Munich 2019 [DE]
+        url: make-munich-2019
+      - name: AFu-Kolloqium München 2019 [DE]
+        url: afu-kolloquium-2019
 - name: Hardware
   url: hardware
   children:
