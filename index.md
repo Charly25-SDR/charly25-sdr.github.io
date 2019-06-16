@@ -7,9 +7,6 @@
 2019-06-16
 : Updated the Red Pitaya software section
 
-2019-02-24
-: Added directories for software binaries
-
 2019-02-13
 : Add link to [our shop](https://smartradioconcepts.com/)
 
