@@ -1,15 +1,24 @@
 ---
-title: Red Pitaya Software for Charly 25 
+title: STEMlab software for Charly 25 
 ---
 
-# Red Pitaya Software for Charly 25
+# STEMlab software for Charly 25
 
-Here is the Red Pitaya software based on Pavel Demin's project: [SDR transceiver compatible with HPSDR](https://pavel-demin.github.io/red-pitaya-notes/sdr-transceiver-hpsdr), modified for our needs.
+## Charly 25 STEMlab 122.88-16 SDR SD Card Images
 
-You can download the latest stable version from here:
+[Latest release version](https://github.com/Charly25-SDR/binary-downloads/releases/download/charly25-sdcard-image-z20-beta-20190612/charly25-sdcard-image-z20-beta-20190612.zip)
 
-[Red Pitaya Software for Charly 25 - latest stable version](http://downloads.redpitaya.com/downloads/charly25ab/stemlab_sdr_transceiver_hpsdr-0.94-1665.zip)
+[Latest beta version](https://github.com/Charly25-SDR/binary-downloads/releases/download/charly25-sdcard-image-z20-beta-20190612/charly25-sdcard-image-z20-beta-20190612.zip)
 
-If you are interested in the sourcecode you can find the related branch here:
 
-[Red Pitaya Software for Charly 25 - charly25ab branch](https://github.com/RedPitaya/red-pitaya-notes/tree/charly25ab/projects/sdr_transceiver_hpsdr)
+## Charly 25 STEMlab 122.88-16 SDR Application
+
+Here is the STEMlab software based on Pavel Demin's project: [SDR transceiver compatible with HPSDR](https://pavel-demin.github.io/red-pitaya-notes/sdr-transceiver-hpsdr), modified for our needs and included in the SD card images above.
+
+You can download the latest release version from here:
+
+[STEMlab software for Charly 25 - latest release version](https://github.com/Charly25-SDR/binary-downloads/releases/download/charly25-sdr-release-20190511/charly25_sdr_transceiver_hpsdr.zip)
+
+If you are interested in the sourcecode you can find it here:
+
+[STEMlab software for Charly 25 - sourcecode](https://github.com/RedPitaya/red-pitaya-notes/tree/master/projects/sdr_transceiver_hpsdr)
