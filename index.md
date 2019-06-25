@@ -4,6 +4,9 @@
 
 ## Latest Changes
 
+2019-06-25
+: Extended the Arduino software section by the Charly 25AB Tester V1.2 sketch
+
 2019-06-16
 : Updated the Red Pitaya software section
 
