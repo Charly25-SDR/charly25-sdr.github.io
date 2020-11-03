@@ -4,6 +4,10 @@
 
 ## Latest Changes
 
+2020-11-03
+: Added RADIOlab transceivers
+: Added presentations from SDRA 2020 and Amateurfunktagung München
+
 2019-06-25
 : Extended the Arduino software section by the Charly 25AB Tester V1.2 sketch
 

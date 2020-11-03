@@ -2,6 +2,8 @@
   url:
 - name: Shop
   url: https://smartradioconcepts.com/
+- name: Facebook
+  url: https://facebook.com/smartradioconcepts/
 - name: Project Updates [DE]
   url: project-updates
 - name: Talks & Videos
@@ -16,6 +18,10 @@
         url: make-munich-2019
       - name: AFu-Kolloqium München 2019 [DE]
         url: afu-kolloquium-2019
+      - name: AFu-Tagung München 2020 [DE]
+        url: afu-tagung-2020
+      - name: SDR Academy 2020
+        url: sdra-2020
 - name: Hardware
   url: hardware
   children:
@@ -45,6 +51,8 @@
   url: full-transceivers
   nolink: true
   children:
+      - name: Charly 25 RADIOlab
+        url: radiolab
       - name: DL1FY Windows-Based
         url: dl1fy
       - name: Linux-Based
