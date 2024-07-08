@@ -22,6 +22,8 @@
         url: afu-tagung-2020
       - name: SDR Academy 2020
         url: sdra-2020
+      - name: HAMRadio 2024
+        url: hamradio-2024
 - name: Hardware
   url: hardware
   children:
