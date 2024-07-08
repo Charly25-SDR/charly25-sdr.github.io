@@ -4,6 +4,9 @@
 
 ## Latest Changes
 
+2024-07-08
+: Added HamRadio 2024 presentation slides
+
 2020-11-03
 : Added RADIOlab transceivers
 : Added presentations from SDRA 2020 and Amateurfunktagung München
